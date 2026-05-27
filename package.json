@@ -3,6 +3,9 @@
   "type": "module",
   "version": "1.0.0",
   "description": "Modern portfolio website built with Astro, React, and Tailwind CSS",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
