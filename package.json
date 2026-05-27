@@ -1,25 +1,28 @@
 {
-  "name": "violet-venus",
+  "name": "matej-portfolio",
   "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
+  "version": "1.0.0",
+  "description": "Modern portfolio website built with Astro, React, and Tailwind CSS",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "postinstall": "npx tailwindcss -v >/dev/null || true"
+    "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.3.6",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0",
-    "framer-motion": "^10.12.0",
-    "@astrojs/react": "^3.0.0",
-    "tailwindcss": "^4.3.0",
-    "postcss": "^8.4.24",
-    "autoprefixer": "^10.4.14"
+    "astro": "^5.1.1",
+    "@astrojs/react": "^4.0.0",
+    "@astrojs/tailwind": "^5.1.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "framer-motion": "^10.16.4",
+    "tailwindcss": "^3.4.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/forms": "^0.5.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "typescript": "^5.3.3"
   }
 }
