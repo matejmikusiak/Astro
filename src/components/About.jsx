@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const stats = [
   { value: '3+', label: 'Roky skúseností' },
@@ -26,31 +25,12 @@ const values = [
   },
 ];
 
-const fadeUpVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.6,
-      ease: 'easeOut',
-    },
-  }),
-};
-
 export default function About() {
   return (
     <section id="about" className="section relative">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <span className="text-accent-violet font-semibold text-sm uppercase tracking-wider mb-2 block">
             O mne
           </span>
@@ -60,21 +40,15 @@ export default function About() {
           <p className="section-subtitle mx-auto">
             Som vášnivý vývojár so zameraním na moderné webové technológie a umelú inteligenciu.
           </p>
-        </motion.div>
+        </div>
 
         {/* About Grid */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           {/* Image/Visual */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
+          <div className="relative">
             <div className="relative w-full aspect-square max-w-md mx-auto">
               {/* Gradient circle background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-violet/30 to-accent-cyan/30 rounded-full blur-2xl animate-pulse-slow" />
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-violet/30 to-accent-cyan/30 rounded-full blur-2xl animate-pulse" />
               
               {/* Glass card with avatar */}
               <div className="relative glass rounded-3xl p-8 flex items-center justify-center h-full">
@@ -89,16 +63,10 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-6"
-          >
+          <div className="space-y-6">
             <h3 className="text-3xl font-bold">
               Premieňam <span className="gradient-text">nápady</span> na realitu
             </h3>
@@ -113,14 +81,9 @@ export default function About() {
             
             {/* Values */}
             <div className="grid gap-4 mt-8">
-              {values.map((value, index) => (
-                <motion.div
+              {values.map((value) => (
+                <div
                   key={value.title}
-                  custom={index}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeUpVariants}
                   className="glass p-4 rounded-xl flex items-start gap-4"
                 >
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent-violet to-accent-cyan flex items-center justify-center flex-shrink-0">
@@ -132,36 +95,26 @@ export default function About() {
                     <h4 className="font-semibold text-lg mb-1">{value.title}</h4>
                     <p className="text-dark-400 text-sm">{value.description}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6"
-        >
-          {stats.map((stat, index) => (
-            <motion.div
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {stats.map((stat) => (
+            <div
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
               className="glass p-6 rounded-2xl text-center"
             >
               <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">
                 {stat.value}
               </div>
               <div className="text-dark-400 text-sm">{stat.label}</div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
